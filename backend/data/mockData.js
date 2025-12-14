@@ -668,6 +668,46 @@ const mockData = {
       "status": "active",
       "createdAt": "2025-12-14T23:26:27.322Z",
       "blockchainTxHash": "0xee5deaef6db6d"
+    },
+    {
+      "id": "consent-1765755688902",
+      "patientId": "patient-002",
+      "purpose": "Third-Party Analytics Access",
+      "walletAddress": "0xd474c6a8fd3bee195488bb0ec72a720170433a17",
+      "signature": "0xed688774460d093e880c59c013d1b2aa2f830230ac2a3c789d4c97de605cdc1d1435ff250927ea1d040c3b42994b3b5bb38baeaeff1e787b705fdcca67ab9a421c",
+      "status": "pending",
+      "createdAt": "2025-12-14T23:41:28.902Z",
+      "blockchainTxHash": null
+    },
+    {
+      "id": "consent-1765756500544",
+      "patientId": "patient-002",
+      "purpose": "Research Study Participation",
+      "walletAddress": "0xd474c6a8fd3bee195488bb0ec72a720170433a17",
+      "signature": "0x1112ee727fd99f3b59418569dae466d4a31625df6231d711e94cfb57e0dc2ad1760d56d8e3e177198b219bcc2aef77a3602c304a867d7c962cd230489bb240c11c",
+      "status": "pending",
+      "createdAt": "2025-12-14T23:55:00.544Z",
+      "blockchainTxHash": null
+    },
+    {
+      "id": "consent-1765756515805",
+      "patientId": "patient-005",
+      "purpose": "Third-Party Analytics Access",
+      "walletAddress": "0xd474c6a8fd3bee195488bb0ec72a720170433a17",
+      "signature": "0x5732daab30445533206e2c78f9766a2d39174532d19cecee4d68e2171318d7f316f3f9698906f2733408d23757534318b340c7fc1a13cf17c6ef46650df4059a1c",
+      "status": "pending",
+      "createdAt": "2025-12-14T23:55:15.805Z",
+      "blockchainTxHash": null
+    },
+    {
+      "id": "consent-1765756662996",
+      "patientId": "patient-003",
+      "purpose": "Third-Party Analytics Access",
+      "walletAddress": "0xd474c6a8fd3bee195488bb0ec72a720170433a17",
+      "signature": "0x340936eb5e29506f04efd8693f4239d20c4745db8213f85e0d1ae7d453d2fcb216e1cc47e5ab005ecaee73dbe891f55348f3c23911d36a0cdda0be8ad490b13b1b",
+      "status": "pending",
+      "createdAt": "2025-12-14T23:57:42.996Z",
+      "blockchainTxHash": null
     }
   ],
   "transactions": [
