@@ -1,0 +1,42 @@
+.searchable-dropdown {
+  width: 100%;
+  font-family: inherit;
+}
+
+.searchable-dropdown__control {
+  transition: all 0.3s ease;
+}
+
+.searchable-dropdown__menu {
+  z-index: 100;
+}
+
+.searchable-dropdown__option {
+  transition: background-color 0.2s ease;
+}
+
+.searchable-dropdown__indicator-separator {
+  background-color: #e2e8f0;
+}
+
+.searchable-dropdown__dropdown-indicator {
+  color: #a0aec0;
+  transition: color 0.2s ease;
+}
+
+.searchable-dropdown__dropdown-indicator:hover {
+  color: #667eea;
+}
+
+.searchable-dropdown__clear-indicator {
+  color: #a0aec0;
+  transition: color 0.2s ease;
+}
+
+.searchable-dropdown__clear-indicator:hover {
+  color: #e53e3e;
+}
+
+.searchable-dropdown__loading-indicator {
+  color: #667eea;
+}

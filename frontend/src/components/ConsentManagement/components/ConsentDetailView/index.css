@@ -1,0 +1,190 @@
+.consent-detail-view {
+  padding: 2rem;
+  background: #f7fafc;
+  min-height: 100%;
+}
+
+.consent-detail-section,
+.patient-detail-section,
+.records-detail-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.consent-detail-section:hover,
+.patient-detail-section:hover,
+.records-detail-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.consent-detail-section h3,
+.patient-detail-section h3,
+.records-detail-section h3 {
+  color: #2d3748;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.wallet-text,
+.signature-text,
+.hash-text {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #667eea;
+  background: #f7fafc;
+  padding: 0.5rem;
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+.consent-status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.consent-status-badge.active {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.consent-status-badge.pending {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.consent-status-badge.revoked {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.records-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.record-summary-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.record-summary-card:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+.record-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.record-title {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.record-type {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  background: #e2e8f0;
+  color: #4a5568;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.record-summary-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #718096;
+  flex-wrap: wrap;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.1rem;
+  margin: 2rem;
+  border-radius: 12px;
+  background: white;
+}
+
+.loading {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.error {
+  color: #e53e3e;
+  background: #fff5f5;
+  border: 2px solid #fc8181;
+}
+
+@media (max-width: 768px) {
+  .consent-detail-view {
+    padding: 1rem;
+  }
+
+  .consent-detail-section,
+  .patient-detail-section,
+  .records-detail-section {
+    padding: 1.5rem;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

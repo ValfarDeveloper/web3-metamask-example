@@ -21,6 +21,34 @@ ComponentName/
 - `index.css`: Component styles
 - Child components go in `components/` subdirectory
 
+### General Elements (Reusable Components)
+Generic, highly reusable components go in `src/components/GeneralElements/`:
+
+```
+src/components/
+├── GeneralElements/          # Shared UI components
+│   ├── SidebarModal/         # Generic sidebar modal
+│   ├── Button/               # Reusable button
+│   └── Card/                 # Generic card
+├── PatientList/              # Feature-specific
+└── PatientDetail/            # Feature-specific
+```
+
+**When to use GeneralElements:**
+- Component is used across 2+ different features
+- Component has no business logic specific to one feature
+- Component is a pure UI element (modals, buttons, cards, inputs)
+- Component could be extracted to a component library
+
+**Examples:**
+- ✅ SidebarModal - Used by PatientList, could be used by ConsentManagement
+- ✅ Button - Reusable across entire app
+- ✅ Card - Generic container component
+- ❌ PatientCard - Specific to patients feature, goes in `PatientList/components/`
+
+**Structure:**
+Same as regular components (index.js, behaviors.js, index.css), following all architecture rules above.
+
 ## State Management
 
 ### Single State Object
