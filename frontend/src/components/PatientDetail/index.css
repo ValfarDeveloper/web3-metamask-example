@@ -1,40 +1,29 @@
 .patient-detail-container {
-  padding: 2rem;
-}
-
-.patient-detail-header {
-  margin-bottom: 2rem;
-}
-
-.back-btn {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.back-btn:hover {
-  background: #5568d3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  padding: 0;
+  background: #f7fafc;
+  min-height: 100%;
 }
 
 .patient-detail-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
 .patient-info-section,
 .patient-records-section {
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-info-section:hover,
+.patient-records-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .patient-info-section h2,
@@ -174,12 +163,22 @@
 
 .loading, .error {
   text-align: center;
-  padding: 3rem;
+  padding: 4rem 2rem;
   font-size: 1.1rem;
+  margin: 2rem;
+  border-radius: 12px;
+  background: white;
+}
+
+.loading {
+  color: #667eea;
+  font-weight: 600;
 }
 
 .error {
-  color: #d32f2f;
+  color: #e53e3e;
+  background: #fff5f5;
+  border: 2px solid #fc8181;
 }
 
 .placeholder {
@@ -190,7 +189,7 @@
 }
 
 @media (max-width: 768px) {
-  .patient-detail-container {
+  .patient-detail-content {
     padding: 1rem;
   }
 
@@ -201,6 +200,11 @@
   .record-header {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .patient-info-section,
+  .patient-records-section {
+    padding: 1.5rem;
   }
 }
 

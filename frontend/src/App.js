@@ -2,16 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import WalletConnection from './components/WalletConnection';
 import PatientList from './components/PatientList';
-import PatientDetail from './components/PatientDetail';
 import ConsentManagement from './components/ConsentManagement';
 import TransactionHistory from './components/TransactionHistory';
 import StatsDashboard from './components/StatsDashboard';
 import { useWeb3 } from './hooks/useWeb3';
-import { apiService } from './services/apiService';
 
 function App() {
   const { account, connectWallet, disconnectWallet, isConnected } = useWeb3();
-  const [selectedPatient, setSelectedPatient] = useState(null);
   const [activeTab, setActiveTab] = useState('patients');
 
   useEffect(() => {
@@ -69,20 +66,7 @@ function App() {
       </nav>
 
       <main className="App-main">
-        {activeTab === 'patients' && (
-          <div className="patients-container">
-            {selectedPatient ? (
-              <PatientDetail
-                patientId={selectedPatient}
-                onBack={() => setSelectedPatient(null)}
-              />
-            ) : (
-              <PatientList
-                onSelectPatient={setSelectedPatient}
-              />
-            )}
-          </div>
-        )}
+        {activeTab === 'patients' && <PatientList />}
 
         {activeTab === 'consents' && (
           <ConsentManagement account={account} />
