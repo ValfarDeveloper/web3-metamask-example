@@ -584,9 +584,9 @@ const mockData = {
       "purpose": "Data Sharing with Research Institution",
       "walletAddress": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
       "signature": null,
-      "status": "pending",
+      "status": "active",
       "createdAt": "2024-02-11T12:00:00Z",
-      "blockchainTxHash": null
+      "blockchainTxHash": "0x0fa49b0b2da29"
     },
     {
       "id": "consent-011",
@@ -707,6 +707,16 @@ const mockData = {
       "signature": "0x340936eb5e29506f04efd8693f4239d20c4745db8213f85e0d1ae7d453d2fcb216e1cc47e5ab005ecaee73dbe891f55348f3c23911d36a0cdda0be8ad490b13b1b",
       "status": "pending",
       "createdAt": "2025-12-14T23:57:42.996Z",
+      "blockchainTxHash": null
+    },
+    {
+      "id": "consent-1765757320794",
+      "patientId": "patient-006",
+      "purpose": "Third-Party Analytics Access",
+      "walletAddress": "0xd474c6a8fd3bee195488bb0ec72a720170433a17",
+      "signature": "0x803f3c12c26ffdba561e56b2f919ff842ca0df23df12bc187199526dce91e3031147a9e9f740638bf02fd1bcaae5099bd538cd86608304e6fe4efdf96c1eae831c",
+      "status": "pending",
+      "createdAt": "2025-12-15T00:08:40.794Z",
       "blockchainTxHash": null
     }
   ],

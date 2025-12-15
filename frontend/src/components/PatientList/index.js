@@ -3,6 +3,7 @@ import './index.css';
 import PatientCard from './components/PatientCard';
 import SidebarModal from '../GeneralElements/SidebarModal';
 import PatientDetail from '../PatientDetail';
+import Pagination from '../GeneralElements/Pagination';
 import {
   handleSearchDebounce,
   fetchPatients,
@@ -110,36 +111,13 @@ const PatientList = () => {
         )}
       </div>
 
-      {state.pagination && state.pagination.totalPages > 1 && (
-        <div className="pagination">
-          <div className="pagination-buttons">
-            <button
-              onClick={() => handlePreviousPage(state, setState)}
-              disabled={state.currentPage <= 1}
-            >
-              ← Previous
-            </button>
-            <button
-              onClick={() => handleNextPage(state, setState)}
-              disabled={state.currentPage >= state.pagination.totalPages}
-            >
-              Next →
-            </button>
-          </div>
-
-          <div className="pagination-info">
-            <div className="pagination-info-current">
-              Page <span className="highlight">{state.pagination.page}</span> of{' '}
-              <span className="highlight">{state.pagination.totalPages}</span>
-            </div>
-            {state.pagination.total !== undefined && (
-              <div className="pagination-info-total">
-                {state.pagination.total} total patients
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      <Pagination
+        pagination={state.pagination}
+        currentPage={state.currentPage}
+        onPreviousPage={() => handlePreviousPage(state, setState)}
+        onNextPage={() => handleNextPage(state, setState)}
+        itemLabel="patient"
+      />
 
       <SidebarModal
         isOpen={state.isModalOpen}
