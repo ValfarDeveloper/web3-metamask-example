@@ -1,6 +1,10 @@
 import { apiService } from '../../services/apiService';
 import { toast } from 'react-toastify';
 
+/**
+ * Fetches platform statistics from API
+ * @param {Function} setState - State setter function
+ */
 const fetchStats = async (setState) => {
   setState(prev => ({ ...prev, loading: true, error: null }));
 
@@ -24,6 +28,11 @@ const fetchStats = async (setState) => {
   }
 };
 
+/**
+ * Prepares data for main platform overview bar chart
+ * @param {Object} stats - Statistics object from API
+ * @returns {Array} Array of chart data objects with name, value, color, and icon
+ */
 const prepareChartData = (stats) => {
   if (!stats) return [];
 
@@ -55,6 +64,11 @@ const prepareChartData = (stats) => {
   ];
 };
 
+/**
+ * Prepares data for consent status pie chart
+ * @param {Object} stats - Statistics object from API
+ * @returns {Array} Array of consent status data, filtered to exclude zero values
+ */
 const prepareConsentChartData = (stats) => {
   if (!stats) return [];
 
@@ -77,9 +91,16 @@ const prepareConsentChartData = (stats) => {
       color: '#6b7280',
       icon: '•'
     }
-  ].filter(item => item.value > 0);
+  ].filter(item => item.value > 0); // Exclude zero values from chart
 };
 
+/**
+ * Returns configuration object for stat card display
+ * @param {string} key - Stat key (e.g., 'totalPatients', 'activeConsents')
+ * @param {number} value - Stat value
+ * @param {Object} stats - Full statistics object for percentage calculations
+ * @returns {Object} Config object with label, icon, gradient, description, and optional percentage
+ */
 const getStatCardConfig = (key, value, stats) => {
   const configs = {
     totalPatients: {
@@ -122,6 +143,7 @@ const getStatCardConfig = (key, value, stats) => {
     }
   };
 
+  // Return default config for unknown keys
   return configs[key] || {
     label: key,
     icon: '📊',
@@ -130,6 +152,11 @@ const getStatCardConfig = (key, value, stats) => {
   };
 };
 
+/**
+ * Formats large numbers with K/M suffixes
+ * @param {number} num - Number to format
+ * @returns {string} Formatted number (e.g., '1.5K', '2.3M', or '123')
+ */
 const formatNumber = (num) => {
   if (num >= 1000000) {
     return (num / 1000000).toFixed(1) + 'M';
